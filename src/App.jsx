@@ -12,8 +12,8 @@ function App() {
       <BrowserRouter>
         <Layout />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/react-site/" element={<Home />} />
+          <Route path="/react-site/login" element={<Login />} />
         </Routes>
       </BrowserRouter>
     </>
