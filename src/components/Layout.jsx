@@ -13,6 +13,12 @@ function Layout() {
                     <li>
                         <Link to="/react-site/login">Login</Link>
                     </li>
+                    <li>
+                        <Link to="/react-site/fetch">Fetch</Link>
+                    </li>
+                    <li>
+                        <Link to="/react-site/width">Width</Link>
+                    </li>
                 </ul>
             </nav>
             <Outlet></Outlet>
