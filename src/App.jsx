@@ -4,6 +4,9 @@ import Login from './components/Login'
 import Home from './components/Home'
 import Fetch from './components/Fetch'
 import Width from './components/Width'
+import Memo from './components/Memo'
+import Memo4 from './components/Memo4'
+import Memo5 from './components/Memo5'
 import './App.css'
 
 function App() {
@@ -14,7 +17,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/react-site/" element={<Layout />} >
-            <Route index element={<Home />} />
+            <Route index element={<Memo5 />} />
             <Route path="login" element={<Login />} />
             <Route path="fetch" element={<Fetch />} />
             <Route path="width" element={<Width />} />
