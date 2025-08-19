@@ -6,10 +6,13 @@ import { ThemeProvider } from "./components/theme-provider.tsx";
 import RootLayout from "./pages/layout.tsx"; // 전역 레이아웃 컴포넌트
 import App from "./pages"; // 메인 페이지
 import "./index.css";
-import Html from "./pages/html.tsx";
-import Css from "./pages/css.tsx";
-import Js from "./pages/js.tsx";
-import ReactJs from "./pages/reactjs.tsx";
+import Html from "./pages/htmlcss/index.tsx";
+import Js from "./pages/js/index.tsx";
+import ReactJs from "./pages/react/index.tsx";
+import Mini_Blog from "./study/mini/Mini_Blog.jsx";
+import MainPage from "./study/mini/pages/MainPage.jsx";
+import PostWritePage from "./study/mini/pages/PostWritePage.jsx";
+import PostViewPage from "./study/mini/pages/PostViewPage.jsx";
 
 createRoot(document.getElementById("root")!).render(
     <StrictMode>
@@ -18,10 +21,15 @@ createRoot(document.getElementById("root")!).render(
                 <Routes>
                     <Route element={<RootLayout />}>
                         <Route index element={<App />} />
-                        <Route path="/html" element={<Html />} />
-                        <Route path="/css" element={<Css />} />
-                        <Route path="/js" element={<Js />} />
-                        <Route path="/react" element={<ReactJs />} />
+                        <Route path="/htmlcss/:id" element={<Html />} />
+                        <Route path="/js/:id" element={<Js />} />
+                        <Route path="/react/:id" element={<ReactJs />} />
+                        {/* 소플 미니 블로그 */}
+                        <Route path="Mini_blog" element={<Mini_Blog />}>
+                            <Route index element={<MainPage />} />
+                            <Route path="post-write" element={<PostWritePage />} />
+                            <Route path="post/:postId" element={<PostViewPage />} />
+                        </Route>
                     </Route>
                 </Routes>
             </BrowserRouter>

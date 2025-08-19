@@ -1,30 +1,79 @@
-import { STUDY_CATEGORY } from "@/constants/category.constant";
+import { HTML_CSS_CATEGORY_LIST, JS_CATEGORY_LIST, REACT_CATEGORY_LIST } from "../../constants/category.constant";
 import { ChevronDown } from "lucide-react";
 import { Button } from "../ui";
-import { NavLink, useNavigate } from "react-router";
+import { NavLink } from "react-router";
+import { CodeXml, List } from "lucide-react";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "../ui/collapsible"
+
+interface ContentItem {
+  id: number;
+  label: string;
+  category: string;
+}
+
+interface CollapsibleMenuProps {
+  title: string;
+  path: string;
+  contentList: ContentItem[];
+}
+
+const CollapsibleMenu: React.FC<CollapsibleMenuProps> = ({title, path, contentList}) => {
+    return (
+        <Collapsible>
+            <div className="w-full flex flex-col gap-2">
+                {/* <NavLink to={`/${path}`}
+                    className="flex flex-row justify-start items-center gap-2 text-muted-foreground hover:text-white hover:pl-4 transition-all duration-500"> */}
+                    <CollapsibleTrigger asChild>
+                        <Button variant="ghost" className="flex flex-row justify-start items-center gap-2 text-muted-foreground hover:text-white hover:pl-6 transition-all duration-500">
+                            <List />
+                            {title}
+                        </Button>
+                    </CollapsibleTrigger>
+                {/* </NavLink> */}
+            </div>
+            <CollapsibleContent className="w-full flex flex-col gap-2">
+                {contentList.map((menu) => {
+                    if(menu.category === 'Mini_blog') {
+                        return (
+                            <NavLink to={`/${menu.category}`} key={menu.id} 
+                                className="flex flex-row justify-start items-center gap-2 text-muted-foreground hover:text-white hover:pl-2 transition-all duration-500">
+                                <Button variant="ghost">
+                                    <CodeXml />
+                                    {menu.label}
+                                </Button>
+                            </NavLink>
+                        )
+                    } else {
+                        return (
+                            <NavLink to={`/${path}/${menu.category}`} key={menu.id} 
+                                className="flex flex-row justify-start items-center gap-2 text-muted-foreground hover:text-white hover:pl-2 transition-all duration-500">
+                                <Button variant="ghost">
+                                    <CodeXml />
+                                    {menu.label}
+                                </Button>
+                            </NavLink>
+                        )
+                    }
+                })}
+            </CollapsibleContent>
+        </Collapsible>
+    )
+}
 
 function AppSidebar() {
-    const navigate = useNavigate();
-    
     return (
-        <aside className="min-w-60 w-60 flex flex-col gap-6">
+        <aside className="min-w-60 w-60 flex flex-col gap-4">
             <div className="flex items-center gap-2">
                 <h4 className="scroll-m-20 text-lg font-semibold tracking-tight">카테고리</h4>
                 <ChevronDown className="mt-1" />
             </div>
-            <div className="w-full flex flex-col gap-2">
-                {STUDY_CATEGORY.map((menu) => {
-                    return (
-                        <NavLink to={`/${menu.category}`} key={menu.id} 
-                            className="flex flex-row justify-start items-center gap-2 text-muted-foreground hover:text-white hover:pl-6 transition-all duration-500">
-                            <Button variant="ghost">
-                                {menu.icon}
-                                {menu.label}
-                            </Button>
-                        </NavLink>
-                    );
-                })}
-            </div>
+            <CollapsibleMenu title="HTML+CSS" path="htmlcss" contentList={HTML_CSS_CATEGORY_LIST} />
+            <CollapsibleMenu title="JavaScript" path="js" contentList={JS_CATEGORY_LIST} />
+            <CollapsibleMenu title="React" path="react" contentList={REACT_CATEGORY_LIST} />
         </aside>
     );
 }
