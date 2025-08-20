@@ -1,5 +1,5 @@
 import MDEditor from '@uiw/react-md-editor'
-import refContent from '../../content/useRef.md?raw'
+import refContent from '@/content/react/useRef.md?raw'
 
 function UseRef() {
     return (

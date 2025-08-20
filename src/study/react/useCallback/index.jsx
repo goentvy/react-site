@@ -1,5 +1,5 @@
 import MDEditor from '@uiw/react-md-editor'
-import callbackContent from '../../content/useCallback.md?raw'
+import callbackContent from '@/content/react/useCallback.md?raw'
 
 function UseCallback() {
     return (

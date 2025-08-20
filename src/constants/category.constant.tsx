@@ -34,7 +34,11 @@ export const REACT_CATEGORY_LIST = [
     { id: 5, label: "React-useRef", category: "useRef"},
     { id: 6, label: "React-useContext", category: "useContext"},
     { id: 7, label: "React-Redux", category: "redux"},
-    { id: 8, label: "React-zustand", category: "zustand"},
+    { id: 8, label: "React-Zustand", category: "zustand"},
     { id: 9, label: "React-Mini_blog", category: "Mini_blog"},
     { id: 10, label: "React-Web_Design", category: "webdesign"},
+]
+
+export const TAILWINDCSS_CATEGORY_LIST = [
+    { id: 1, label: "setting", category: "setting"},
 ]

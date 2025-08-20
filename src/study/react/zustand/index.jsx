@@ -1,5 +1,5 @@
 import MDEditor from '@uiw/react-md-editor'
-import zustandContent from '../../content/zustand.md?raw'
+import zustandContent from '@/content/react/zustand.md?raw'
 
 function Zustand() {
     return (

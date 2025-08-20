@@ -1,5 +1,5 @@
 import MDEditor from '@uiw/react-md-editor'
-import stateContent from '../../content/useState.md?raw'
+import stateContent from '@/content/react/useState.md?raw'
 
 function UseState() {
     return (

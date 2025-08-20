@@ -1,5 +1,5 @@
 import MDEditor from '@uiw/react-md-editor'
-import memoContent from '../../content/useMemo.md?raw'
+import memoContent from '@/content/react/useMemo.md?raw'
 
 function UseMemo() {
     return (

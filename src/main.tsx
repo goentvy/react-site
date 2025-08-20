@@ -10,6 +10,7 @@ import "./index.css";
 import Html from "./pages/htmlcss/index.tsx";
 import Js from "./pages/js/index.tsx";
 import ReactJs from "./pages/react/index.tsx";
+import Tailwindcss from "./pages/tailwindcss/index.tsx";
 import Mini_Blog from "./study/mini/Mini_Blog.jsx";
 import MainPage from "./study/mini/pages/MainPage.jsx";
 import PostWritePage from "./study/mini/pages/PostWritePage.jsx";
@@ -25,6 +26,7 @@ createRoot(document.getElementById("root")!).render(
                         <Route path="/htmlcss/:id" element={<Html />} />
                         <Route path="/js/:id" element={<Js />} />
                         <Route path="/react/:id" element={<ReactJs />} />
+                        <Route path="/tailwindcss/:id" element={<Tailwindcss />} />
                         {/* 소플 미니 블로그 */}
                         <Route path="/Mini_blog" element={<Mini_Blog />}>
                             <Route index element={<MainPage />} />

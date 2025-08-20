@@ -1,5 +1,5 @@
 import MDEditor from '@uiw/react-md-editor'
-import effectContent from '../../content/useEffect.md?raw'
+import effectContent from '@/content/react/useEffect.md?raw'
 
 function UseEffect() {
     return (

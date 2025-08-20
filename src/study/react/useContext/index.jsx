@@ -1,5 +1,5 @@
 import MDEditor from '@uiw/react-md-editor'
-import contextContent from '../../content/useContext.md?raw'
+import contextContent from '@/content/react/useContext.md?raw'
 
 function UseContext() {
     return (

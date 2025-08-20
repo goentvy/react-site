@@ -1,4 +1,4 @@
-import { HTML_CSS_CATEGORY_LIST, JS_CATEGORY_LIST, REACT_CATEGORY_LIST } from "../../constants/category.constant";
+import { HTML_CSS_CATEGORY_LIST, JS_CATEGORY_LIST, REACT_CATEGORY_LIST, TAILWINDCSS_CATEGORY_LIST } from "../../constants/category.constant";
 import { ChevronDown } from "lucide-react";
 import { Button } from "../ui";
 import { NavLink } from "react-router";
@@ -71,6 +71,7 @@ function AppSidebar() {
             <CollapsibleMenu title="HTML+CSS" path="htmlcss" contentList={HTML_CSS_CATEGORY_LIST} />
             <CollapsibleMenu title="JavaScript" path="js" contentList={JS_CATEGORY_LIST} />
             <CollapsibleMenu title="React" path="react" contentList={REACT_CATEGORY_LIST} />
+            <CollapsibleMenu title="Tailwindcss" path="tailwindcss" contentList={TAILWINDCSS_CATEGORY_LIST} />
         </aside>
     );
 }

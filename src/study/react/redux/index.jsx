@@ -1,5 +1,5 @@
 import MDEditor from '@uiw/react-md-editor'
-import reduxContent from '../../content/redux.md?raw'
+import reduxContent from '@/content/react/redux.md?raw'
 
 function Redux() {
     return (

@@ -1,14 +1,14 @@
 import { useLocation } from "react-router";
-import UseState from "../../study/useState";
-import UseEffect from "../../study/useEffect";
-import UseCallback from "../../study/useCallback";
-import UseMemo from "../../study/useMemo";
-import UseRef from "../../study/useRef";
-import UseContext from "../../study/useContext";
-import Redux from "../../study/redux";
-import Zustand from "../../study/zustand";
-import Mini_Blog from "../../study/mini/Mini_Blog.jsx";
-import Web_Design from "../../study/webdesign";
+import UseState from "@/study/react/useState";
+import UseEffect from "@/study/react/useEffect";
+import UseCallback from "@/study/react/useCallback";
+import UseMemo from "@/study/react/useMemo";
+import UseRef from "@/study/react/useRef";
+import UseContext from "@/study/react/useContext";
+import Redux from "@/study/react/redux";
+import Zustand from "@/study/react/zustand";
+import Mini_Blog from "@/study/mini/Mini_Blog.jsx";
+import Web_Design from "@/study/react/webdesign";
 
 
 function ReactJs() {
