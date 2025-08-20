@@ -1,6 +1,7 @@
-import React, { StrictMode } from "react";
+import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router";
+import { Routes, Route } from "react-router";
+import { HashRouter } from 'react-router-dom';
 import { ThemeProvider } from "./components/theme-provider.tsx";
 
 import RootLayout from "./pages/layout.tsx"; // 전역 레이아웃 컴포넌트
@@ -15,9 +16,30 @@ import PostWritePage from "./study/mini/pages/PostWritePage.jsx";
 import PostViewPage from "./study/mini/pages/PostViewPage.jsx";
 
 createRoot(document.getElementById("root")!).render(
+    // <StrictMode>
+    //     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+    //         <BrowserRouter basename="/react-site"> {/* basename 추가 */}
+    //             <Routes>
+    //                 <Route element={<RootLayout />}>
+    //                     <Route index element={<App />} />
+    //                     <Route path="/htmlcss/:id" element={<Html />} />
+    //                     <Route path="/js/:id" element={<Js />} />
+    //                     <Route path="/react/:id" element={<ReactJs />} />
+    //                     {/* 소플 미니 블로그 */}
+    //                     <Route path="/Mini_blog" element={<Mini_Blog />}>
+    //                         <Route index element={<MainPage />} />
+    //                         <Route path="/Mini_blog/post-write" element={<PostWritePage />} />
+    //                         <Route path="/Mini_blog/post/:postId" element={<PostViewPage />} />
+    //                     </Route>
+    //                 </Route>
+    //                     <Route path="*" element={<div>404 Not Found</div>} /> {/* 모든 불일치 경로 처리 */}
+    //             </Routes>
+    //         </BrowserRouter>
+    //     </ThemeProvider>
+    // </StrictMode>
     <StrictMode>
         <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-            <BrowserRouter basename="/react-site"> {/* basename 추가 */}
+            <HashRouter>
                 <Routes>
                     <Route element={<RootLayout />}>
                         <Route index element={<App />} />
@@ -27,13 +49,13 @@ createRoot(document.getElementById("root")!).render(
                         {/* 소플 미니 블로그 */}
                         <Route path="/Mini_blog" element={<Mini_Blog />}>
                             <Route index element={<MainPage />} />
-                            <Route path="/Mini_blog/post-write" element={<PostWritePage />} />
-                            <Route path="/Mini_blog/post/:postId" element={<PostViewPage />} />
+                            <Route path="post-write" element={<PostWritePage />} />
+                            <Route path="post/:postId" element={<PostViewPage />} />
                         </Route>
                     </Route>
                         <Route path="*" element={<div>404 Not Found</div>} /> {/* 모든 불일치 경로 처리 */}
                 </Routes>
-            </BrowserRouter>
+            </HashRouter>
         </ThemeProvider>
     </StrictMode>
 );
