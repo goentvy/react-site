@@ -14,7 +14,6 @@ import Web_Design from "../../study/webdesign";
 function ReactJs() {
     const location = useLocation();
     let path = location.pathname;
-    console.log(path);
 
     return (
         <div>

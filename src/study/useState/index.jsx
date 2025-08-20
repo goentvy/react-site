@@ -1,6 +1,11 @@
+import MDEditor from '@uiw/react-md-editor'
+import stateContent from '../../content/useState.md?raw'
+
 function UseState() {
     return (
-        <div>useState</div>
+        <div className="wmde-markdown-var">
+            <MDEditor.Markdown source={stateContent} className="p-6"/>
+        </div>
     )
 }
 

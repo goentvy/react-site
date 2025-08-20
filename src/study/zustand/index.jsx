@@ -1,6 +1,11 @@
+import MDEditor from '@uiw/react-md-editor'
+import zustandContent from '../../content/zustand.md?raw'
+
 function Zustand() {
     return (
-        <div>Zustand</div>
+        <div className="wmde-markdown-var">
+            <MDEditor.Markdown source={zustandContent} className="p-6"/>
+        </div>
     )
 }
 
