@@ -17,7 +17,7 @@ import PostViewPage from "./study/mini/pages/PostViewPage.jsx";
 createRoot(document.getElementById("root")!).render(
     <StrictMode>
         <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-            <BrowserRouter>
+            <BrowserRouter basename="/react-site"> {/* basename 추가 */}
                 <Routes>
                     <Route element={<RootLayout />}>
                         <Route index element={<App />} />
@@ -25,12 +25,13 @@ createRoot(document.getElementById("root")!).render(
                         <Route path="/js/:id" element={<Js />} />
                         <Route path="/react/:id" element={<ReactJs />} />
                         {/* 소플 미니 블로그 */}
-                        <Route path="Mini_blog" element={<Mini_Blog />}>
+                        <Route path="/Mini_blog" element={<Mini_Blog />}>
                             <Route index element={<MainPage />} />
-                            <Route path="post-write" element={<PostWritePage />} />
-                            <Route path="post/:postId" element={<PostViewPage />} />
+                            <Route path="/Mini_blog/post-write" element={<PostWritePage />} />
+                            <Route path="/Mini_blog/post/:postId" element={<PostViewPage />} />
                         </Route>
                     </Route>
+                        <Route path="*" element={<div>404 Not Found</div>} /> {/* 모든 불일치 경로 처리 */}
                 </Routes>
             </BrowserRouter>
         </ThemeProvider>

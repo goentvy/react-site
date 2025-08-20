@@ -36,4 +36,5 @@ export const REACT_CATEGORY_LIST = [
     { id: 7, label: "React-Redux", category: "redux"},
     { id: 8, label: "React-zustand", category: "zustand"},
     { id: 9, label: "React-Mini_blog", category: "Mini_blog"},
+    { id: 9, label: "React-Web_Design", category: "webdesign"},
 ]

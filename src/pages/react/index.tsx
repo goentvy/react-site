@@ -8,6 +8,8 @@ import UseContext from "../../study/useContext";
 import Redux from "../../study/redux";
 import Zustand from "../../study/zustand";
 import Mini_Blog from "../../study/mini/Mini_Blog.jsx";
+import Web_Design from "../../study/webdesign";
+
 
 function ReactJs() {
     const location = useLocation();
@@ -24,6 +26,7 @@ function ReactJs() {
             {path === '/react/redux' ? <Redux /> : <div></div>}
             {path === '/react/zustand' ? <Zustand /> : <div></div>}
             {path === '/Mini_blog' ? <Mini_Blog /> : <div></div>}
+            {path === '/react/webdesign' ? <Web_Design /> : <div></div>}
         </div>
     );
 }

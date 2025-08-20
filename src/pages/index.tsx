@@ -8,7 +8,7 @@ function App() {
             <div className="w-full flex flex-col gap-6">
                 <div className="flex flex-col gap-1">
                     <div className="flex items-center gap-2">
-                        <img src="/assets/gifs/gif-001.gif" alt="@IMG" className="w-7 h-7" />
+                        <img src="./assets/gifs/gif-001.gif" alt="@IMG" className="w-7 h-7" />
                         <h4 className="scroll-m-20 text-xl font-semibold tracking-tight">Layout은 무엇으로?</h4>
                     </div>
                     <p className="md:text-base text-muted-foreground">
@@ -26,7 +26,7 @@ function App() {
             <div className="w-full flex flex-col gap-6">
                 <div className="flex flex-col gap-1">
                     <div className="flex items-center gap-2">
-                        <img src="/assets/gifs/gif-002.gif" alt="@IMG" className="w-7 h-7" />
+                        <img src="./assets/gifs/gif-002.gif" alt="@IMG" className="w-7 h-7" />
                         <h4 className="scroll-m-20 text-xl font-semibold tracking-tight">공부거리</h4>
                     </div>
                     <p className="md:text-base text-muted-foreground">공부는 끝이없네요.</p>
