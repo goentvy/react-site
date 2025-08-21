@@ -42,3 +42,9 @@ export const REACT_CATEGORY_LIST = [
 export const TAILWINDCSS_CATEGORY_LIST = [
     { id: 1, label: "setting", category: "setting"},
 ]
+
+export const DEVELOPER_CATEGORY_LIST = [
+    { id: 1, label: "front-roadmap", category: "frontend"},
+    { id: 2, label: "back-roadmap", category: "backend"},
+    { id: 3, label: "lazy_loading", category: "lazyloading"},
+]

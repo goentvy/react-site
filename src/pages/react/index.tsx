@@ -8,7 +8,7 @@ import UseContext from "@/study/react/useContext";
 import Redux from "@/study/react/redux";
 import Zustand from "@/study/react/zustand";
 import Mini_Blog from "@/study/mini/Mini_Blog.jsx";
-import Web_Design from "@/study/react/webdesign";
+import WebDesign from "@/study/webdesign";
 
 
 function ReactJs() {
@@ -26,7 +26,7 @@ function ReactJs() {
             {path === '/react/redux' ? <Redux /> : <div></div>}
             {path === '/react/zustand' ? <Zustand /> : <div></div>}
             {path === '/Mini_blog' ? <Mini_Blog /> : <div></div>}
-            {path === '/react/webdesign' ? <Web_Design /> : <div></div>}
+            {path === '/react/webdesign' ? <WebDesign /> : <div></div>}
         </div>
     );
 }
