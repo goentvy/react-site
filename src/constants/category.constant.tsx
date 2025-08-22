@@ -13,17 +13,14 @@ export const HTML_CSS_CATEGORY_LIST = [
 ]
 
 export const JS_CATEGORY_LIST = [
-    { id: 1, label: "JS-07-24", category: "0724"},
-    { id: 2, label: "JS-07-25", category: "0725"},
-    { id: 3, label: "JS-07-28", category: "0728"},
-    { id: 4, label: "JS-07-29", category: "0729"},
-    { id: 5, label: "JS-07-30", category: "0730"},
-    { id: 6, label: "JS-07-31", category: "0731"},
-    { id: 7, label: "JS-08-01", category: "0801"},
-    { id: 8, label: "JS-08-04", category: "0804"},
-    { id: 9, label: "JS-08-05", category: "0805"},
-    { id: 10, label: "JS-08-07", category: "0807"},
-    { id: 11, label: "JS-08-08", category: "0808"},
+    { id: 1, label: "Function_Part1", category: "function1"},
+    { id: 2, label: "Function_Part2", category: "function2"},
+    { id: 3, label: "Function_Part3", category: "function3"},
+    { id: 4, label: "Callbacks", category: "callbacks"},
+    { id: 5, label: "Promise_basics", category: "promise_basics"},
+    { id: 6, label: "Promise_method", category: "promise_method"},
+    { id: 7, label: "Promise_chaining", category: "promise_chaining"},
+    { id: 12, label: "JS-08-22", category: "0822"},
 ]
 
 export const REACT_CATEGORY_LIST = [
