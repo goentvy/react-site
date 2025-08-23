@@ -1,10 +1,10 @@
 import MDEditor from '@uiw/react-md-editor'
-import lazyLoadingContent from '@/content/developer/lazyLoading.md?raw'
+import developerContent from '@/content/developer/lazyLoading.md?raw'
 
 function Lazyloading() {
     return (
         <div className="wmde-markdown-var">
-            <MDEditor.Markdown source={lazyLoadingContent} className="p-6"/>
+            <MDEditor.Markdown source={developerContent} className="p-6"/>
         </div>
     )
 }

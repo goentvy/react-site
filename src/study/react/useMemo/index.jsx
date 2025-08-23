@@ -1,10 +1,10 @@
 import MDEditor from '@uiw/react-md-editor'
-import memoContent from '@/content/react/useMemo.md?raw'
+import reactContent from '@/content/react/useMemo.md?raw'
 
 function UseMemo() {
     return (
         <div className="wmde-markdown-var">
-            <MDEditor.Markdown source={memoContent} className="p-6"/>
+            <MDEditor.Markdown source={reactContent} className="p-6"/>
         </div>
     )
 }

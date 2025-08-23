@@ -62,7 +62,7 @@ function PostViewPage() {
                 <Button
                     title='뒤로가기'
                     onClick={() => {
-                        navigate('/Mini_blog');
+                        navigate('/react/Mini-blog');
                     }}
                 />
                 <PostContainer>
@@ -83,7 +83,7 @@ function PostViewPage() {
                 <Button
                     title=' 댓글 작성하기'
                     onClick={() => {
-                        navigate('/Mini_blog');
+                        navigate('/react/Mini-blog');
                     }}
                 />
 

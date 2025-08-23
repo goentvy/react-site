@@ -1,10 +1,10 @@
 import MDEditor from '@uiw/react-md-editor'
-import effectContent from '@/content/react/useEffect.md?raw'
+import reactContent from '@/content/react/useEffect.md?raw'
 
 function UseEffect() {
     return (
         <div className="wmde-markdown-var">
-            <MDEditor.Markdown source={effectContent} className="p-6"/>
+            <MDEditor.Markdown source={reactContent} className="p-6"/>
         </div>
     )
 }

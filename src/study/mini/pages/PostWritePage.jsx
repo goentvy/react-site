@@ -54,7 +54,7 @@ function PostWritePage(){
                     <Button
                     title='글 작성하기'
                     onClick={() => {
-                        navigate('/Mini_blog');
+                        navigate('/react/Mini-blog');
                     }}
                     
                     />

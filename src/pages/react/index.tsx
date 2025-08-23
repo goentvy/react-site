@@ -25,7 +25,7 @@ function ReactJs() {
             {path === '/react/useContext' ? <UseContext /> : <div></div>}
             {path === '/react/redux' ? <Redux /> : <div></div>}
             {path === '/react/zustand' ? <Zustand /> : <div></div>}
-            {path === '/Mini_blog' ? <Mini_Blog /> : <div></div>}
+            {path === '/react/Mini-blog' ? <Mini_Blog /> : <div></div>}
             {path === '/react/webdesign' ? <WebDesign /> : <div></div>}
         </div>
     );

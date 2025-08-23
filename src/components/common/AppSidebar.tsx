@@ -1,4 +1,4 @@
-import { DEVELOPER_CATEGORY_LIST, HTML_CSS_CATEGORY_LIST, JS_CATEGORY_LIST, REACT_CATEGORY_LIST, TAILWINDCSS_CATEGORY_LIST } from "../../constants/category.constant";
+import { DEVELOPER_CATEGORY_LIST, HTML_CSS_CATEGORY_LIST, JS_CATEGORY_LIST, REACT_CATEGORY_LIST, TAILWINDCSS_CATEGORY_LIST, ERROR_CATEGORY_LIST, ZOD_CATEGORY_LIST } from "../../constants/category.constant";
 import { ChevronDown } from "lucide-react";
 import { Button } from "../ui";
 import { NavLink } from "react-router";
@@ -34,17 +34,6 @@ const CollapsibleMenu: React.FC<CollapsibleMenuProps> = ({title, path, contentLi
             </div>
             <CollapsibleContent className="w-full flex flex-col gap-2">
                 {contentList.map((menu) => {
-                    if(menu.category === 'Mini_blog') {
-                        return (
-                            <NavLink to={`/${menu.category}`} key={menu.id} 
-                                className="flex flex-row justify-start items-center gap-2 text-muted-foreground hover:text-white hover:pl-2 transition-all duration-500">
-                                <Button variant="ghost">
-                                    <CodeXml />
-                                    {menu.label}
-                                </Button>
-                            </NavLink>
-                        )
-                    } else {
                         return (
                             <NavLink to={`/${path}/${menu.category}`} key={menu.id} 
                                 className="flex flex-row justify-start items-center gap-2 text-muted-foreground hover:text-white hover:pl-2 transition-all duration-500">
@@ -55,7 +44,7 @@ const CollapsibleMenu: React.FC<CollapsibleMenuProps> = ({title, path, contentLi
                             </NavLink>
                         )
                     }
-                })}
+                )}
             </CollapsibleContent>
         </Collapsible>
     )
@@ -73,6 +62,8 @@ function AppSidebar() {
             <CollapsibleMenu title="React" path="react" contentList={REACT_CATEGORY_LIST} />
             <CollapsibleMenu title="Tailwindcss" path="tailwindcss" contentList={TAILWINDCSS_CATEGORY_LIST} />
             <CollapsibleMenu title="Developer" path="developer" contentList={DEVELOPER_CATEGORY_LIST} />
+            <CollapsibleMenu title="Error" path="error" contentList={ERROR_CATEGORY_LIST} />
+            <CollapsibleMenu title="Zod" path="zod" contentList={ZOD_CATEGORY_LIST} />
         </aside>
     );
 }

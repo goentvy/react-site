@@ -18,9 +18,9 @@ function Js() {
             {path === '/js/function2' ? <JsFunction2 /> : <div></div>}
             {path === '/js/function3' ? <JsFunction3 /> : <div></div>}
             {path === '/js/callbacks' ? <Callbacks /> : <div></div>}
-            {path === '/js/promise_basics' ? <Promise_basics /> : <div></div>}
-            {path === '/js/promise_method' ? <Promise_method /> : <div></div>}
-            {path === '/js/promise_chaining' ? <Promise_chaining /> : <div></div>}
+            {path === '/js/promise-basics' ? <Promise_basics /> : <div></div>}
+            {path === '/js/promise-method' ? <Promise_method /> : <div></div>}
+            {path === '/js/promise-chaining' ? <Promise_chaining /> : <div></div>}
         </div>
     );
 }

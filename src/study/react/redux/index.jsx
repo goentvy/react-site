@@ -1,10 +1,10 @@
 import MDEditor from '@uiw/react-md-editor'
-import reduxContent from '@/content/react/redux.md?raw'
+import reactContent from '@/content/react/redux.md?raw'
 
 function Redux() {
     return (
         <div className="wmde-markdown-var">
-            <MDEditor.Markdown source={reduxContent} className="p-6"/>
+            <MDEditor.Markdown source={reactContent} className="p-6"/>
         </div>
     )
 }
