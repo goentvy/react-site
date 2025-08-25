@@ -1,15 +1,5 @@
 export const HTML_CSS_CATEGORY_LIST = [
-    { id: 1, label: "HTML-07-16", category: "0716"},
-    { id: 2, label: "HTML-07-17", category: "0717"},
-    { id: 3, label: "HTML-07-18", category: "0718"},
-    { id: 4, label: "HTML-07-21", category: "0721"},
-    { id: 5, label: "HTML-07-22", category: "0722"},
-    { id: 6, label: "HTML-07-23", category: "0723"},
-    { id: 7, label: "HTML-07-24", category: "0724"},
-    { id: 8, label: "HTML-07-25", category: "0725"},
-    { id: 9, label: "HTML-07-28", category: "0728"},
-    { id: 10, label: "HTML-07-29", category: "0729"},
-    { id: 11, label: "HTML-07-30", category: "0730"},
+    { id: 1, label: "HTML", category: "0716"}
 ]
 
 export const JS_CATEGORY_LIST = [
@@ -53,4 +43,12 @@ export const ERROR_CATEGORY_LIST = [
 export const ZOD_CATEGORY_LIST = [
     { id: 1, label: "Zod-Schema", category: "zod-schema"},
     { id: 2, label: "Zod-Example", category: "zod-example"},
+]
+
+export const SUPABASE_CATEGORY_LIST = [
+    { id: 1, label: "Supabase-Connect", category: "supabase-connect"},
+]
+
+export const VUE_CATEGORY_LIST = [
+    { id: 1, label: "Vue-Start", category: "vue-start"},
 ]

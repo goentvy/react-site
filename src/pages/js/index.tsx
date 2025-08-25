@@ -8,7 +8,7 @@ import Promise_method from "@/study/js/promise_method";
 import Promise_chaining from "@/study/js/promise_chaining";
 
 
-function Js() {
+function JsPage() {
     const location = useLocation();
     let path = location.pathname;
 
@@ -25,4 +25,4 @@ function Js() {
     );
 }
 
-export default Js;
+export default JsPage;

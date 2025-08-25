@@ -11,7 +11,7 @@ import Mini_Blog from "@/study/mini/Mini_Blog.jsx";
 import WebDesign from "@/study/webdesign";
 
 
-function ReactJs() {
+function ReactJsPage() {
     const location = useLocation();
     let path = location.pathname;
 
@@ -31,4 +31,4 @@ function ReactJs() {
     );
 }
 
-export default ReactJs;
+export default ReactJsPage;

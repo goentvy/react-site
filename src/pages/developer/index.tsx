@@ -3,7 +3,7 @@ import Frontend from "@/study/developer/frontendroadmap";
 import Backend from "@/study/developer/backendroadmap";
 import Lazyloading from '@/study/developer/lazyloading';
 
-function Developer() {
+function DeveloperPage() {
     const location = useLocation();
     let path = location.pathname;
 
@@ -16,4 +16,4 @@ function Developer() {
     );
 }
 
-export default Developer;
+export default DeveloperPage;

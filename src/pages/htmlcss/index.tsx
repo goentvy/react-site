@@ -1,4 +1,4 @@
-function Html() {
+function HtmlPage() {
     return (
         <div>
             Html
@@ -6,4 +6,4 @@ function Html() {
     );
 }
 
-export default Html;
+export default HtmlPage;

@@ -1,7 +1,7 @@
 import { useLocation } from "react-router";
 import Setting from "@/study/tailwindcss/setting";
 
-function Tailwindcss() {
+function TailwindcssPage() {
     const location = useLocation();
     let path = location.pathname;
 
@@ -12,4 +12,4 @@ function Tailwindcss() {
     );
 }
 
-export default Tailwindcss;
+export default TailwindcssPage;
