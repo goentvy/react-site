@@ -52,3 +52,7 @@ export const SUPABASE_CATEGORY_LIST = [
 export const VUE_CATEGORY_LIST = [
     { id: 1, label: "Vue-Start", category: "vue-start"},
 ]
+
+export const PROJECT_CATEGORY_LIST = [
+    { id: 1, label: "News", category: "news"},
+]

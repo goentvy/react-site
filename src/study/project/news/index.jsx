@@ -1,0 +1,12 @@
+import MDEditor from '@uiw/react-md-editor'
+import projectContent from '@/content/project/news.md?raw'
+
+function NewsApp() {
+    return (
+        <div className="wmde-markdown-var">
+            <MDEditor.Markdown source={projectContent} className="p-6"/>
+        </div>
+    )
+}
+
+export default NewsApp;

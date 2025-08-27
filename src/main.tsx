@@ -16,6 +16,7 @@ import ErrorPage from "./pages/error";
 import ZodPage from "./pages/zod";
 import SupabasePage from "./pages/supabase";
 import VuePage from "./pages/vue";
+import ProjectPage from "./pages/project";
 
 // 소플 미니 블로그
 import Mini_Blog from "./study/mini/Mini_Blog.jsx";
@@ -39,6 +40,7 @@ createRoot(document.getElementById("root")!).render(
                         <Route path="/zod/:id" element={<ZodPage />} />
                         <Route path="/supabase/:id" element={<SupabasePage />} />
                         <Route path="/vue/:id" element={<VuePage />} />
+                        <Route path="/project/:id" element={<ProjectPage />} />
                         {/* 소플 미니 블로그 */}
                         <Route path="/react/Mini-blog" element={<Mini_Blog />}>
                             <Route index element={<MainPage />} />
