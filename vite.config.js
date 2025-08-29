@@ -19,4 +19,14 @@ export default defineConfig({
             "@": path.resolve(__dirname, "./src"),
         },
     },
+    /* 프록시 설정 */
+    server: {
+        proxy: {
+        '/v1': {
+            target: 'https://openapi.naver.com',
+            changeOrigin: true,
+            rewrite: (path) => path.replace(/^\/api/, ''),
+        }
+        }
+    },
 });

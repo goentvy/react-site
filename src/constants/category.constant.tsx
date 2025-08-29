@@ -55,6 +55,9 @@ export const VUE_CATEGORY_LIST = [
 
 export const PROJECT_CATEGORY_LIST = [
     { id: 1, label: "News", category: "news"},
+    { id: 2, label: "NewsApp", category: "newsApp"},
+    { id: 3, label: "Movie", category: "movie"},
+    { id: 4, label: "MovieApp", category: "movieApp"},
 ]
 
 export const GITHUB_CATEGORY_LIST = [

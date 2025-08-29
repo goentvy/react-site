@@ -21,7 +21,7 @@ JSON 요청 URL - `https://openapi.naver.com/v1/search/news.json`
 
 ## 개발환경
 
-React + TypeScript + Vite를 기본 베이스로 그외 ShadCN UI, axios 등 추가해보았습니다.
+React + TypeScript + Vite를 기본 베이스로 그외 ShadCN UI, axios 등 추가했습니다.
 
 ## 구현 코드
 ```ts
@@ -201,7 +201,9 @@ export function useNewsSearch(query: string) {
     // 4. 컴포넌트에서 사용할 상태와 값들을 객체로 묶어 반환
     return { data, loading, error };
 }
+```
 
+```ts
 src/pages/Search.tsx
 
 import { useState } from "react";

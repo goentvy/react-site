@@ -34,3 +34,13 @@ export {
 } from './dropdown-menu'
 
 export { Collapsible, CollapsibleTrigger, CollapsibleContent } from './collapsible'
+
+export {
+  Card,
+  CardHeader,
+  CardFooter,
+  CardTitle,
+  CardAction,
+  CardDescription,
+  CardContent,
+} from './card'

@@ -1,5 +1,8 @@
 import { useLocation } from "react-router";
-import NewsApp from "@/study/project/news";
+import News from "@/study/project/news";
+import NewsApp from "@/study/project/newsApp";
+import Movie from "@/study/project/movie";
+import MovieApp from "@/study/project/movieApp";
 
 function ProjectPage() {
     const location = useLocation();
@@ -7,7 +10,10 @@ function ProjectPage() {
 
     return (
         <div>
-            {path === '/project/news' ? <NewsApp /> : <div></div>}
+            {path === '/project/news' ? <News /> : <div></div>}
+            {path === '/project/newsApp' ? <NewsApp /> : <div></div>}
+            {path === '/project/movie' ? <Movie /> : <div></div>}
+            {path === '/project/movieApp' ? <MovieApp /> : <div></div>}
         </div>
     );
 }

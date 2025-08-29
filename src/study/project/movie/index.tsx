@@ -1,7 +1,7 @@
 import MDEditor from '@uiw/react-md-editor'
-import projectContent from '@/content/project/news.md?raw'
+import projectContent from '@/content/project/movie.md?raw'
 
-function News() {
+function Movie() {
     return (
         <div className="wmde-markdown-var">
             <MDEditor.Markdown source={projectContent} className="p-6"/>
@@ -9,4 +9,4 @@ function News() {
     )
 }
 
-export default News;
+export default Movie;
