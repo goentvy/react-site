@@ -1,13 +1,12 @@
-import { DEVELOPER_CATEGORY_LIST, HTML_CSS_CATEGORY_LIST, JS_CATEGORY_LIST, REACT_CATEGORY_LIST, TAILWINDCSS_CATEGORY_LIST, ERROR_CATEGORY_LIST, ZOD_CATEGORY_LIST, SUPABASE_CATEGORY_LIST, VUE_CATEGORY_LIST, PROJECT_CATEGORY_LIST } from "../../constants/category.constant";
-import { ChevronDown } from "lucide-react";
-import { Button } from "../ui";
+import { DEVELOPER_CATEGORY_LIST, HTML_CSS_CATEGORY_LIST, JS_CATEGORY_LIST, REACT_CATEGORY_LIST, TAILWINDCSS_CATEGORY_LIST, ERROR_CATEGORY_LIST, ZOD_CATEGORY_LIST, SUPABASE_CATEGORY_LIST, VUE_CATEGORY_LIST, PROJECT_CATEGORY_LIST, GITHUB_CATEGORY_LIST } from "../../constants/category.constant";
 import { NavLink } from "react-router";
-import { CodeXml, List } from "lucide-react";
+import { ChevronDown, CodeXml, List } from "lucide-react";
 import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "../ui/collapsible"
+    Button,
+    Collapsible,
+    CollapsibleContent,
+    CollapsibleTrigger,
+} from "../ui"
 
 interface ContentItem {
   id: number;
@@ -67,6 +66,7 @@ function AppSidebar() {
             <CollapsibleMenu title="Supabase" path="supabase" contentList={SUPABASE_CATEGORY_LIST} />
             <CollapsibleMenu title="Vue" path="vue" contentList={VUE_CATEGORY_LIST} />
             <CollapsibleMenu title="Project" path="project" contentList={PROJECT_CATEGORY_LIST} />
+            <CollapsibleMenu title="Github" path="github" contentList={GITHUB_CATEGORY_LIST} />
         </aside>
     );
 }

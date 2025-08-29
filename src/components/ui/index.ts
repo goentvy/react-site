@@ -32,3 +32,5 @@ export {
   DropdownMenuSubTrigger,
   DropdownMenuSubContent,
 } from './dropdown-menu'
+
+export { Collapsible, CollapsibleTrigger, CollapsibleContent } from './collapsible'

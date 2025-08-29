@@ -17,12 +17,13 @@ import ZodPage from "./pages/zod";
 import SupabasePage from "./pages/supabase";
 import VuePage from "./pages/vue";
 import ProjectPage from "./pages/project";
+import GithubPage from "./pages/github";
 
 // 소플 미니 블로그
-import Mini_Blog from "./study/mini/Mini_Blog.jsx";
-import MainPage from "./study/mini/pages/MainPage.jsx";
-import PostWritePage from "./study/mini/pages/PostWritePage.jsx";
-import PostViewPage from "./study/mini/pages/PostViewPage.jsx";
+import Mini_Blog from "./study/mini/Mini_Blog.tsx";
+import MainPage from "./study/mini/pages/MainPage.tsx";
+import PostWritePage from "./study/mini/pages/PostWritePage.tsx";
+import PostViewPage from "./study/mini/pages/PostViewPage.tsx";
 
 createRoot(document.getElementById("root")!).render(
     <StrictMode>
@@ -41,6 +42,8 @@ createRoot(document.getElementById("root")!).render(
                         <Route path="/supabase/:id" element={<SupabasePage />} />
                         <Route path="/vue/:id" element={<VuePage />} />
                         <Route path="/project/:id" element={<ProjectPage />} />
+                        <Route path="/github/:id" element={<GithubPage />} />
+                        
                         {/* 소플 미니 블로그 */}
                         <Route path="/react/Mini-blog" element={<Mini_Blog />}>
                             <Route index element={<MainPage />} />

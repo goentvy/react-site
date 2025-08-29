@@ -7,7 +7,7 @@ import UseRef from "@/study/react/useRef";
 import UseContext from "@/study/react/useContext";
 import Redux from "@/study/react/redux";
 import Zustand from "@/study/react/zustand";
-import Mini_Blog from "@/study/mini/Mini_Blog.jsx";
+import Mini_Blog from "@/study/mini/Mini_Blog.js";
 import WebDesign from "@/study/webdesign";
 
 

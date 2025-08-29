@@ -1,4 +1,4 @@
-import { Button, Separator } from "../ui";
+import { Separator } from "../ui";
 
 function AppFooter() {
     return (

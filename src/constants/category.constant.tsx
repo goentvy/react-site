@@ -56,3 +56,7 @@ export const VUE_CATEGORY_LIST = [
 export const PROJECT_CATEGORY_LIST = [
     { id: 1, label: "News", category: "news"},
 ]
+
+export const GITHUB_CATEGORY_LIST = [
+    { id: 1, label: "Github-Commit Delete", category: "git-commit"},
+]

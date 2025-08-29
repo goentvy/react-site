@@ -1,6 +1,6 @@
 import { useLocation } from "react-router";
 import ZodSchema from "@/study/zod/schema";
-import ZodExample from "@/study/zod/example";
+import ZodExample from "@/study/zod/Example";
 
 function ZodPage() {
     const location = useLocation();
