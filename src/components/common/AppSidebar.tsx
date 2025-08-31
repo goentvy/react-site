@@ -58,8 +58,9 @@ interface AsideMenuProps {
 const AppSidebar: React.FC<AsideMenuProps> = ({ isOpen, onClose }) => {
     return (
         <aside
-            className={`aside-menu lg:z-9 min-w-60 w-60 lg:flex flex-col gap-4 fixed lg:static top-0 left-0 h-full bg-[#20232a] lg:bg-[#0A0A0A] transform transition-transform duration-300 z-50
-            ${isOpen ? "open translate-x-0" : "-translate-x-full"} lg:translate-x-0`}
+            className={`aside-menu lg:z-9 min-w-60 w-60 lg:flex flex-col gap-4 fixed lg:static top-0 left-0 h-full bg-[#20232a] lg:bg-[#0A0A0A] z-50 
+                transform transition-transform duration-300 ease-in-out 
+                ${isOpen ? "open translate-x-0" : "-translate-x-full"} lg:translate-x-0`}
             >
             <div className="flex items-center gap-2 p-3 lg:p-0">
                 <p className="scroll-m-20 text-sm lg:text-lg font-semibold tracking-tight">카테고리</p>
