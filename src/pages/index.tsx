@@ -15,7 +15,7 @@ function App() {
                         <Link to="https://ui.shadcn.com/" target="_blank">Shadcn UI</Link>를 이용해보면 이러한 Layout을 쉽게 구성가능합니다.
                     </p>
                 </div>
-                <div className="grid grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     <SkeletonHotTopic />
                     <SkeletonHotTopic />
                     <SkeletonHotTopic />
@@ -31,7 +31,7 @@ function App() {
                     </div>
                     <p className="md:text-base text-muted-foreground">공부는 끝이없네요.</p>
                 </div>
-                <div className="grid grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <SkeletonNewTopic />
                     <SkeletonNewTopic />
                     <SkeletonNewTopic />

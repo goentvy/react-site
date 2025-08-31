@@ -18,9 +18,10 @@ interface CollapsibleMenuProps {
   title: string;
   path: string;
   contentList: ContentItem[];
+  close: () => void;
 }
 
-const CollapsibleMenu: React.FC<CollapsibleMenuProps> = ({title, path, contentList}) => {
+const CollapsibleMenu: React.FC<CollapsibleMenuProps> = ({title, path, contentList, close}) => {
     return (
         <Collapsible>
             <div className="w-full flex flex-col gap-2">
@@ -34,7 +35,7 @@ const CollapsibleMenu: React.FC<CollapsibleMenuProps> = ({title, path, contentLi
             <CollapsibleContent className="w-full flex flex-col gap-2">
                 {contentList.map((menu) => {
                         return (
-                            <NavLink to={`/${path}/${menu.category}`} key={menu.id} 
+                            <NavLink to={`/${path}/${menu.category}`} key={menu.id} onClick={close}
                                 className="flex flex-row justify-start items-center gap-2 text-muted-foreground hover:text-white hover:pl-2 transition-all duration-500">
                                 <Button variant="ghost">
                                     <CodeXml />
@@ -48,25 +49,33 @@ const CollapsibleMenu: React.FC<CollapsibleMenuProps> = ({title, path, contentLi
         </Collapsible>
     )
 }
+interface AsideMenuProps {
+    isOpen: boolean;
+    onClose: () => void;
+}
 
-function AppSidebar() {
+
+const AppSidebar: React.FC<AsideMenuProps> = ({ isOpen, onClose }) => {
     return (
-        <aside className="min-w-60 w-60 flex flex-col gap-4">
-            <div className="flex items-center gap-2">
-                <h4 className="scroll-m-20 text-lg font-semibold tracking-tight">카테고리</h4>
-                <ChevronDown className="mt-1" />
+        <aside
+            className={`aside-menu lg:z-9 min-w-60 w-60 lg:flex flex-col gap-4 fixed lg:static top-0 left-0 h-full bg-[#20232a] lg:bg-[#0A0A0A] transform transition-transform duration-300 z-50
+            ${isOpen ? "open translate-x-0" : "-translate-x-full"} lg:translate-x-0`}
+            >
+            <div className="flex items-center gap-2 p-3 lg:p-0">
+                <p className="scroll-m-20 text-sm lg:text-lg font-semibold tracking-tight">카테고리</p>
+                <ChevronDown className="mt-1 w-4 h-4 lg:w-6 lg:h-6" />
             </div>
-            <CollapsibleMenu title="HTML+CSS" path="htmlcss" contentList={HTML_CSS_CATEGORY_LIST} />
-            <CollapsibleMenu title="JavaScript" path="js" contentList={JS_CATEGORY_LIST} />
-            <CollapsibleMenu title="React" path="react" contentList={REACT_CATEGORY_LIST} />
-            <CollapsibleMenu title="Tailwindcss" path="tailwindcss" contentList={TAILWINDCSS_CATEGORY_LIST} />
-            <CollapsibleMenu title="Developer" path="developer" contentList={DEVELOPER_CATEGORY_LIST} />
-            <CollapsibleMenu title="Error" path="error" contentList={ERROR_CATEGORY_LIST} />
-            <CollapsibleMenu title="Zod" path="zod" contentList={ZOD_CATEGORY_LIST} />
-            <CollapsibleMenu title="Supabase" path="supabase" contentList={SUPABASE_CATEGORY_LIST} />
-            <CollapsibleMenu title="Vue" path="vue" contentList={VUE_CATEGORY_LIST} />
-            <CollapsibleMenu title="Project" path="project" contentList={PROJECT_CATEGORY_LIST} />
-            <CollapsibleMenu title="Github" path="github" contentList={GITHUB_CATEGORY_LIST} />
+            <CollapsibleMenu title="HTML+CSS" path="htmlcss" contentList={HTML_CSS_CATEGORY_LIST} close={onClose} />
+            <CollapsibleMenu title="JavaScript" path="js" contentList={JS_CATEGORY_LIST} close={onClose} />
+            <CollapsibleMenu title="React" path="react" contentList={REACT_CATEGORY_LIST} close={onClose} />
+            <CollapsibleMenu title="Tailwindcss" path="tailwindcss" contentList={TAILWINDCSS_CATEGORY_LIST} close={onClose} />
+            <CollapsibleMenu title="Developer" path="developer" contentList={DEVELOPER_CATEGORY_LIST} close={onClose} />
+            <CollapsibleMenu title="Error" path="error" contentList={ERROR_CATEGORY_LIST} close={onClose} />
+            <CollapsibleMenu title="Zod" path="zod" contentList={ZOD_CATEGORY_LIST} close={onClose} />
+            <CollapsibleMenu title="Supabase" path="supabase" contentList={SUPABASE_CATEGORY_LIST} close={onClose} />
+            <CollapsibleMenu title="Vue" path="vue" contentList={VUE_CATEGORY_LIST} close={onClose} />
+            <CollapsibleMenu title="Project" path="project" contentList={PROJECT_CATEGORY_LIST} close={onClose} />
+            <CollapsibleMenu title="Github" path="github" contentList={GITHUB_CATEGORY_LIST} close={onClose} />
         </aside>
     );
 }

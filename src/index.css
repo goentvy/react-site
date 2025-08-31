@@ -142,8 +142,37 @@
         width: 100%;
         max-width: 1328px;
 
-        padding-top: 48px;
+        padding-top: 52px;
 
         flex: 1;
     }
+    .container > main > div {
+        width: 100%;
+    }
+}
+
+/* mobile toggle btn */
+.menu-toggle {
+  background: none;
+  border: none;
+}
+
+.aside-menu {
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 1023px) {
+  .aside-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: #20232a;
+    transform: translateX(-100%);
+    z-index: 1000;
+  }
+
+  .aside-menu.open {
+    transform: translateX(0);
+  }
 }
