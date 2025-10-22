@@ -1,7 +1,40 @@
 import { Link } from "react-router";
 import { SkeletonHotTopic, SkeletonNewTopic } from "../components/skeleton";
+import { useEffect, useState } from "react";
+import axios from "@/lib/axios";
+import Topic from "@/components/topic/Topic";
+
+interface Post {
+    id: number
+    title: string
+    slug: string
+    author: string
+    category: string
+    imageUrl: string
+    createdAt: string
+}
 
 function App() {
+    const [hotPosts, setHotPosts] = useState<Post[] | null>(null)
+    const [newPosts, setNewPosts] = useState<Post[] | null>(null)
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const [hotPost, newPost] = await Promise.all([
+                    axios.get('/posts/latest'),
+                    axios.get('/posts/random'),
+                ])
+                setHotPosts(hotPost.data)
+                setNewPosts(newPost.data)
+            } catch(err) {
+                console.error('데이터 불러오기 실패', err)
+            }
+        }
+
+        fetchData()
+    }, [])
+
     return (
         <section className="flex-1 flex flex-col gap-12">
             {/* Layout 소개 */}
@@ -16,10 +49,13 @@ function App() {
                     </p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <SkeletonHotTopic />
-                    <SkeletonHotTopic />
-                    <SkeletonHotTopic />
-                    <SkeletonHotTopic />
+                    {
+                        hotPosts ? 
+                            hotPosts.map(post => (
+                                <Topic key={post.id} {...post}/>
+                            )) : 
+                                <SkeletonHotTopic />
+                    }
                 </div>
             </div>
             {/* 공부거리 */}
@@ -32,10 +68,13 @@ function App() {
                     <p className="md:text-base text-muted-foreground">공부는 끝이없네요.</p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <SkeletonNewTopic />
-                    <SkeletonNewTopic />
-                    <SkeletonNewTopic />
-                    <SkeletonNewTopic />
+                    {
+                        newPosts ? 
+                            newPosts.map(post => (
+                                <Topic key={post.id} {...post}/>
+                            )) : 
+                                <SkeletonNewTopic />
+                    }
                 </div>
             </div>
         </section>
