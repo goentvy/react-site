@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const instance = axios.create({
-  baseURL: 'http://localhost:8090/api', // Spring Boot API 주소
+  baseURL: 'https://entvy-blog.onrender.com/api', // Spring Boot API 주소
   headers: {
     'Content-Type': 'application/json',
   },
