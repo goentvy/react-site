@@ -7,7 +7,6 @@ import UseRef from "@/study/react/useRef";
 import UseContext from "@/study/react/useContext";
 import Redux from "@/study/react/redux";
 import Zustand from "@/study/react/zustand";
-import Mini_Blog from "@/study/mini/Mini_Blog.js";
 import WebDesign from "@/study/webdesign";
 
 
@@ -25,7 +24,6 @@ function ReactJsPage() {
             {path === '/react/useContext' ? <UseContext /> : <div></div>}
             {path === '/react/redux' ? <Redux /> : <div></div>}
             {path === '/react/zustand' ? <Zustand /> : <div></div>}
-            {path === '/react/Mini-blog' ? <Mini_Blog /> : <div></div>}
             {path === '/react/webdesign' ? <WebDesign /> : <div></div>}
         </div>
     );

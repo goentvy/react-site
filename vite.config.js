@@ -10,7 +10,6 @@ import mdPlugin from 'vite-plugin-markdown';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// https://vite.dev/config/
 export default defineConfig({
     base: '/react-site/',
     plugins: [react(), tailwindcss(), mdPlugin],
@@ -22,11 +21,11 @@ export default defineConfig({
     /* 프록시 설정 */
     server: {
         proxy: {
-        '/v1': {
-            target: 'https://openapi.naver.com',
-            changeOrigin: true,
-            rewrite: (path) => path.replace(/^\/api/, ''),
-        }
+            '/v1': {
+                target: 'https://openapi.naver.com',
+                changeOrigin: true,
+                rewrite: (path) => path.replace(/^\/api/, ''),
+            }
         }
     },
 });

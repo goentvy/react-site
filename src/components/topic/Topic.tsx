@@ -1,30 +1,23 @@
-import { resolveImageUrl } from '@/lib/utils';
-import { Skeleton } from '../ui';
+import type { Post } from '@/types/post'
+import { Link } from 'react-router-dom';
 
-interface Post {
-  title: string
-  slug: string
-  author: string
-  category: string
-  imageUrl: string
-  createdAt: string
-}
+const Topic = ({ title, slug, author, category, createdAt }: Post) => {
+  return (
+    <div className="w-full p-4 rounded-md border border-border bg-card hover:shadow-md transition">
+      <div className="text-xs text-muted-foreground mb-1">
+        {author} | {new Date(createdAt).toLocaleDateString()}
+      </div>
 
-const Topic = ({ title, slug, author, category, imageUrl, createdAt }: Post) => {
-    return (
-        <div className="w-full flex flex-col gap-2">
-            <div className="w-full h-70">
-                <img src={resolveImageUrl(imageUrl)} alt={title} />
-            </div>
-            <div className="flex items-center gap-2">
-                <Skeleton className="w-10 h-10 rounded-full" />
-                <div className="flex flex-col gap-2">
-                    <div className="w-full h-3">{category} | {title}</div>
-                    <div className="w-full h-[14px]">{author} | {new Date(createdAt).toLocaleDateString()}</div>
-                </div>
-            </div>
-        </div>
-    );
+      <Link to={`/posts/${slug}`}>
+        <h3 className="text-lg font-semibold leading-tight mb-1 line-clamp-2">
+            {title}
+        </h3>
+      </Link>
+
+      <div className="text-sm text-primary font-medium">{category}</div>
+    </div>
+  );
 };
+
 
 export default Topic;

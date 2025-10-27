@@ -1,18 +1,9 @@
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { SkeletonHotTopic, SkeletonNewTopic } from "../components/skeleton";
 import { useEffect, useState } from "react";
 import axios from "@/lib/axios";
 import Topic from "@/components/topic/Topic";
-
-interface Post {
-    id: number
-    title: string
-    slug: string
-    author: string
-    category: string
-    imageUrl: string
-    createdAt: string
-}
+import type { Post } from '@/types/post'
 
 function App() {
     const [hotPosts, setHotPosts] = useState<Post[] | null>(null)
@@ -48,14 +39,13 @@ function App() {
                         <Link to="https://ui.shadcn.com/" target="_blank">Shadcn UI</Link>를 이용해보면 이러한 Layout을 쉽게 구성가능합니다.
                     </p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 min-h-[300px]">
                     {
-                        hotPosts ? 
-                            hotPosts.map(post => (
-                                <Topic key={post.id} {...post}/>
-                            )) : 
-                                <SkeletonHotTopic />
-                    }
+                        hotPosts && hotPosts.length > 0 ? (
+                            hotPosts.map(post => <Topic key={post.id} {...post}/>)
+                        ) : (
+                            <SkeletonHotTopic />
+                        )}
                 </div>
             </div>
             {/* 공부거리 */}

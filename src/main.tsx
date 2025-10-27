@@ -18,12 +18,7 @@ import SupabasePage from "./pages/supabase";
 import VuePage from "./pages/vue";
 import ProjectPage from "./pages/project";
 import GithubPage from "./pages/github";
-
-// 소플 미니 블로그
-import Mini_Blog from "./study/mini/Mini_Blog.tsx";
-import MainPage from "./study/mini/pages/MainPage.tsx";
-import PostWritePage from "./study/mini/pages/PostWritePage.tsx";
-import PostViewPage from "./study/mini/pages/PostViewPage.tsx";
+import PostDetail from "./components/common/PostDetail.tsx";
 
 createRoot(document.getElementById("root")!).render(
     <StrictMode>
@@ -43,13 +38,7 @@ createRoot(document.getElementById("root")!).render(
                         <Route path="/vue/:id" element={<VuePage />} />
                         <Route path="/project/:id" element={<ProjectPage />} />
                         <Route path="/github/:id" element={<GithubPage />} />
-                        
-                        {/* 소플 미니 블로그 */}
-                        <Route path="/react/Mini-blog" element={<Mini_Blog />}>
-                            <Route index element={<MainPage />} />
-                            <Route path="post-write" element={<PostWritePage />} />
-                            <Route path="post/:postId" element={<PostViewPage />} />
-                        </Route>
+                        <Route path="/posts/:slug" element={<PostDetail />} />
                     </Route>
                         <Route path="*" element={<div>404 Not Found</div>} /> {/* 모든 불일치 경로 처리 */}
                 </Routes>
