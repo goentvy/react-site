@@ -39,7 +39,7 @@ export function useNewsSearch(query: string) {
                     headers: {
                         Accept: 'application/json',
                     }, signal });
-                console.log(response.data);
+                    
                 if(response.data?.items && Array.isArray(response.data.items)) {
                     setData(response.data.items);
                 } else {

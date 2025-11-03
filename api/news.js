@@ -3,9 +3,6 @@ export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Methods', 'GET'); // ✅ 허용 메서드
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
-  console.log('CLIENT_ID:', process.env.CLIENT_ID);
-  console.log('CLIENT_SECRET:', process.env.CLIENT_SECRET);
-
   const query = req.query.q;
   const response = await fetch(`https://openapi.naver.com/v1/search/news.json?query=${encodeURIComponent(query)}`, {
     headers: {
