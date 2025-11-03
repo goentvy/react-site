@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 
 /* News App Search Hook */
 export function useNewsSearch(query: string) {
@@ -31,20 +31,22 @@ export function useNewsSearch(query: string) {
 
             try {
                 const encodedquery = encodeURIComponent(query);
-                
-                const response = await axios.get(`/api/news?q=${encodedquery}`);
-                console.log(response);
+                const baseUrl = import.meta.env.DEV
+                    ? 'https://react-site-eta-flax.vercel.app/api/news'
+                    : 'https://react-site-eta-flax.vercel.app/api/news';
 
-                if( response.status === 200) {
-                    setData(response.data.items);
-                } else {
-                    console.log('response error');
-                }
+                const response = await axios.get(`${baseUrl}?q=${encodedquery}`, { 
+                    headers: {
+                        Accept: 'application/json',
+                    }, signal });
+                console.log(response.data);
+                
+                setData(response.data.items);
             } catch (err) {
                 if(axios.isCancel(err)) {
                     console.log('Request canceled: ', err.message);
-                } else if(err instanceof Error) {
-                    setError(err.message);
+                } else if (axios.isAxiosError(err)) {
+                    setError(err.response?.data?.errorMessage || err.message);
                 } else {
                     setError('An unknown error occurred');
                 }
@@ -66,23 +68,26 @@ export function useNewsSearch(query: string) {
 
 /* 날짜 포맷 필터링 - News App */
 export function DateFilter(date: string) {
-    return new Date(date).toLocaleDateString('ko-KR', 
-                {
-                    year: 'numeric',
-                    month: '2-digit',
-                    day: '2-digit'
-                }) + ' ' + new Date(date).toLocaleTimeString('ko-KR',
-                {
-                    hour: "numeric", 
-                    minute: "numeric", 
-                    second: "numeric"
-                });
+  const d = new Date(date);
+  return d.toLocaleDateString('ko-KR', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  }) + ' ' + d.toLocaleTimeString('ko-KR', {
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric',
+  });
 }
 
 /* "20250828" 형식의 날짜 필터링 - Movie App API Url 사용 */
 export function formatDate(date: Date) {
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const day = String(date.getDate() - 1).padStart(2, '0');
-    return year + month + day;
+  const d = new Date(date);
+  d.setDate(d.getDate() - 1); // 하루 빼기
+
+  const year = d.getFullYear();
+  const month = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+
+  return year + month + day;
 }
