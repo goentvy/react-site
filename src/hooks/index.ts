@@ -30,18 +30,10 @@ export function useNewsSearch(query: string) {
             setError(null); // 새로운 검색 시작 시 에러 상태 초기화
 
             try {
-                const clientId = import.meta.env.VITE_CLIENT_ID;
-                const clientSecret = import.meta.env.VITE_CLIENT_SECRET;
                 const encodedquery = encodeURIComponent(query);
-                const url = `/v1/search/news.json?query=${encodedquery}`;
                 
-                const response = await axios.get(url, {
-                    headers: {
-                        'X-Naver-Client-Id': clientId,
-                        'X-Naver-Client-Secret': clientSecret
-                    },
-                    signal, // 요청에 signal 추가하여 취소가 가능하도록
-                });
+                const response = await axios.get(`/api/news?q=${encodedquery}`);
+                console.log(response);
 
                 if( response.status === 200) {
                     setData(response.data.items);
