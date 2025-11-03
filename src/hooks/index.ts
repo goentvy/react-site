@@ -40,13 +40,17 @@ export function useNewsSearch(query: string) {
                         Accept: 'application/json',
                     }, signal });
                 console.log(response.data);
-                
-                setData(response.data.items);
+                if(response.data?.items && Array.isArray(response.data.items)) {
+                    setData(response.data.items);
+                } else {
+                    setError('뉴스 데이터를 불러올 수 없습니다.');
+                }
             } catch (err) {
                 if(axios.isCancel(err)) {
                     console.log('Request canceled: ', err.message);
                 } else if (axios.isAxiosError(err)) {
-                    setError(err.response?.data?.errorMessage || err.message);
+                    const errorMsg = err.response?.data?.errorMessage || err.message;
+                    setError(errorMsg);
                 } else {
                     setError('An unknown error occurred');
                 }
