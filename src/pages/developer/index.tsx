@@ -1,7 +1,7 @@
 import { useLocation } from "react-router";
 import Frontend from "@/study/developer/frontendroadmap";
 import Backend from "@/study/developer/backendroadmap";
-import Lazyloading from '@/study/developer/lazyLoad';
+import Lazyloading from "@/study/developer/lazyloading";
 
 function DeveloperPage() {
     const location = useLocation();

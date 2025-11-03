@@ -1,5 +1,5 @@
 import MDEditor from '@uiw/react-md-editor'
-import developerContent from '@/content/developer/lazyLoading.md?raw'
+import developerContent from '@/content/developer/lazyLoad.md?raw'
 
 function Lazyloading() {
     return (
