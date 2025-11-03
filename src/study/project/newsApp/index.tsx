@@ -33,17 +33,28 @@ function NewApp() {
                 <div className="p-2.5">로딩 중입니다...</div>
             ) : (
                 <div className="search p-2.5">
-                    {data.length > 0 ? (
-                        data.map((item) => (
-                            <ul key={item.originallink || item.link} className="mb-2">
-                                <li dangerouslySetInnerHTML={{ __html: item.title }} />
-                                <li dangerouslySetInnerHTML={{ __html: item.description }} />
-                                <li>{DateFilter(item.pubDate)}</li>
-                            </ul>
-                        )) 
-                    ) : (
-                        <div>검색 결과가 없습니다.</div>
-                    )}
+                {data.length > 0 ? (
+                    data.map((item) => (
+                    <div
+                        key={item.originallink || item.link}
+                        className="border border-gray-200 rounded-lg p-4 shadow-sm hover:shadow-md transition mb-4"
+                    >
+                        <h2
+                        className="text-lg font-semibold text-blue-300 hover:underline"
+                        dangerouslySetInnerHTML={{ __html: item.title }}
+                        />
+                        <p
+                        className="mt-2 text-gray-200 text-sm"
+                        dangerouslySetInnerHTML={{ __html: item.description }}
+                        />
+                        <p className="mt-3 text-xs text-gray-400">
+                        🕒 {DateFilter(item.pubDate)}
+                        </p>
+                    </div>
+                    ))
+                ) : (
+                    <div>검색 결과가 없습니다.</div>
+                )}
                 </div>
             )}
         </div>
